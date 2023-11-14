@@ -1,6 +1,30 @@
 # Docker_curso_Ada
 Nesse documento apresento meus aprendizados no módulo de Docker da trilha digital da Ada Tech.
 
+Benefícios de usar containers   
+
+1. **Portabilidade e Consistência:** Os contêineres Docker empacotam aplicativos e dependências em um formato portátil, permitindo que sejam executados consistentemente em diferentes ambientes.
+
+2. **Isolamento e Segurança:** Os contêineres oferecem isolamento para aplicativos, reduzindo riscos de interferência entre eles e melhorando a segurança.
+
+3. **Eficiência de Recursos:** São mais leves que máquinas virtuais, consomem menos recursos e inicializam mais rapidamente, permitindo mais contêineres no mesmo hardware.
+
+4. **Rápido Provisionamento e Escalabilidade:** Permitem iniciar e dimensionar aplicativos rapidamente para atender à demanda, essencial em ambientes escaláveis.
+
+5. **Padronização e Reprodutibilidade:** Facilitam a criação de ambientes de desenvolvimento consistentes e padronizados, minimizando conflitos de configuração.
+
+6. **Facilidade de Gerenciamento:** Oferecem ferramentas como Docker Compose para orquestração de aplicativos e Kubernetes para gerenciamento em larga escala.
+
+Esses pontos destacam as vantagens dos contêineres Docker em termos de portabilidade, segurança, eficiência, agilidade, consistência e gerenciamento de aplicativos.
+
+## Orquestradores
+
+Os orquestradores Docker, como Kubernetes, Docker Swarm e outros, são ferramentas que **simplificam e automatizam o gerenciamento de contêineres em ambientes de produção**, permitindo a implantação, escalabilidade, monitoramento e manutenção de aplicativos distribuídos. 
+
+Ambos os orquestradores ajudam a lidar com desafios de gerenciamento em ambientes de produção, mas existem diferenças em suas complexidades, escalabilidade e recursos específicos. Kubernetes é conhecido por sua capacidade avançada de escalabilidade, resiliência e ecossistema rico de ferramentas, enquanto o Docker Swarm é valorizado por sua facilidade de configuração e uso, especialmente para equipes que já estão familiarizadas com o Docker.
+
+Essas ferramentas são essenciais para lidar com implantações complexas de contêineres, automatizando tarefas, oferecendo alta disponibilidade e facilitando a administração de ambientes distribuídos de contêineres em escala.
+
 ## Comandos do Docker
 
 1. docker help
@@ -126,4 +150,29 @@ O Docker Compose é uma ferramenta que permite definir e gerenciar aplicativos D
 
 Com o Docker Compose, você pode descrever os serviços, redes e volumes necessários para sua aplicação em um arquivo YAML chamado docker-compose.yml. Isso facilita a definição de vários serviços que compõem sua aplicação, permitindo a configuração e execução com um único comando.
 
-Acesse o arquivo criado em 
+Acesse o arquivo criado [Docker Compose](https://github.com/Talits/example-course-containers/blob/2b06f380d6dceebf640620d1971ccfa71ba81958/app_docker_compose/docker-compose.yml).
+
+Após executar o primerio comando listado abaixo, pode-se acessar o site no browser:
+    - "localhost:80": serve para visualizar a aba de cadastramento de produtos.
+    - "localhost:15672": serve para acessar o site de gerenciamento da comunicação dos conteiners.
+
+### Comandos do Docker Compose
+
+1. docker-compose up -d
+    - -d: para que o código seja executado em background
+    - para executar o comando deve-se estar no diretório que contem o documento docker-compose
+    - ao executar este comando o sistema irá instalar as imagens para utilização do docker compose.
+
+2. docker-compose ps
+    - ps: lista o que está rodando
+
+3. docker-compose logs -f
+    - apresenta as informações desejadas que as APIs dão (elas são programadas para dar combase no desejo do programador).
+
+4. docker-compose stop
+    - encerra o processamento dos conteiners
+    - necessário para ficar executando em background
+
+5. docker-compose rm f
+    - exclui os conteiner instalados que estavam rodando
+    - quando não for mais usar os conteiners execute esse comando!
