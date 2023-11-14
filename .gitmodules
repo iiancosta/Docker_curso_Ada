@@ -1,0 +1,3 @@
+[submodule "example-course-containers"]
+	path = example-course-containers
+	url = https://github.com/Talits/example-course-containers.git
